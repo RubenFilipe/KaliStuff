@@ -1,0 +1,104 @@
+
+passwd root
+
+apt-get update
+
+
+######### Kali Repos ##########
+
+# Regular
+deb http://http.kali.org/kali sana main non-free contrib
+deb http://security.kali.org/kali-security sana/updates main contrib non-free
+# Source
+deb-src http://http.kali.org/kali sana main non-free contrib
+deb-src http://security.kali.org/kali-security sana/updates main contrib non-free
+
+
+######## Update / Upgrade ######
+
+apt-get clean && apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
+
+######## Install Kali Sound or not :P ########
+
+apt-get install alsa-utils -y
+
+######## Java Install - maybe not ##############
+wget http://download.oracle.com/otn-pub/java/jdk/7u60-b19/jdk-7u60-linux-arm-vfp-hflt.tar.gz
+
+tar -xzvf /root/jdk-7u60-linux-arm-vfp-hflt.tar.gz
+mv jdk1.7.0_45 /opt
+cd /opt/jdk1.7.0_45
+
+update-alternatives --install /usr/bin/java java /opt/jdk1.7.0_45/bin/java 1
+update-alternatives --install /usr/bin/javac javac /opt/jdk1.7.0_45/bin/javac 1
+update-alternatives --install /usr/lib/mozilla/plugins/libjavaplugin.so mozilla-javaplugin.so /opt/jdk1.7.0_45/jre/lib/amd64/libnpjp2.so 1
+update-alternatives --set java /opt/jdk1.7.0_45/bin/java
+update-alternatives --set javac /opt/jdk1.7.0_45/bin/javac
+update-alternatives --set mozilla-javaplugin.so /opt/jdk1.7.0_45/jre/lib/amd64/libnpjp2.so
+
+
+######### Archive Manager ###########
+
+apt-get install unrar p7zip zip unzip p7zip-full p7zip-rar file-roller -y
+
+############# Install Tmux ############
+
+apt-get install tmux
+
+########## Add User #########
+
+useradd -m synman
+
+passwd synman
+
+usermod -a -G sudo synman
+
+chsh -s /bin/bash synman
+
+
+######### Add software repos #############
+
+apt-get install python-software-properties
+
+apt-get install apt-file
+
+apt-file update
+
+apt-file search add-apt-repository
+
+cd /usr/sbin
+vi add-apt-repository
+
+######### Explore Processes #########
+
+apt-get install htop nethogs -y
+
+######### GDebi Package Manager ########
+
+apt-get install gdebi -y
+
+######### Install Awesome ############
+
+apt-get install awesome awesome-extra
+
+
+########## Manage SSH #########
+
+#change port to Nr
+
+#change banner
+
+#manager allowed users
+
+#manager allowed IPs
+
+#Config FailToBan
+
+#Ommit Versions
+
+#Change SSH Banner
+
+#Block empty passwd
+
+#Limit connections by minute
+
