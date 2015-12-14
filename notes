@@ -37,6 +37,8 @@ update-alternatives --set javac /opt/jdk1.7.0_45/bin/javac
 update-alternatives --set mozilla-javaplugin.so /opt/jdk1.7.0_45/jre/lib/amd64/libnpjp2.so
 
 
+
+
 ######### Archive Manager ###########
 
 apt-get install unrar p7zip zip unzip p7zip-full p7zip-rar file-roller -y
