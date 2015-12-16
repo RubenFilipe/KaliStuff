@@ -1,9 +1,6 @@
 
 passwd root
 
-apt-get update
-
-
 ######### Kali Repos ##########
 
 # Regular
@@ -36,8 +33,20 @@ update-alternatives --set java /opt/jdk1.7.0_45/bin/java
 update-alternatives --set javac /opt/jdk1.7.0_45/bin/javac
 update-alternatives --set mozilla-javaplugin.so /opt/jdk1.7.0_45/jre/lib/amd64/libnpjp2.so
 
+######### varios ###########
+
+apt-get install xterm sqlite3 sqlite3-lib
 
 
+##### Missing nice tools ######
+
+apt-get install nikto 
+
+
+######## Anon ########
+
+
+apt-get install proxychains tor 
 
 ######### Archive Manager ###########
 
@@ -104,3 +113,27 @@ apt-get install awesome awesome-extra
 
 #Limit connections by minute
 
+
+
+####### PixieDust #######
+
+apt-get install libpcap-dev
+apt-get install libsqlite3-dev
+
+git clone https://github.com/wiire/pixiewps.git
+
+cd pixiewps
+make
+make install
+
+cd ..
+
+git clone https://github.com/t6x/reaver-wps-fork-t6x.git
+
+cd reaver-wps-fork-t6x
+./configure
+make
+make install
+
+
+###########################
